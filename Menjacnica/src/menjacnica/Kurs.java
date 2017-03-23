@@ -12,30 +12,35 @@ public class Kurs {
 		return prodajni;
 	}
 	public void setProdajni(double prodajni) {
+		if(prodajni==0) throw new RuntimeException("Prodajni kurs ne sme biti 0.");
 		this.prodajni = prodajni;
 	}
 	public double getKupovni() {
 		return kupovni;
 	}
 	public void setKupovni(double kupovni) {
+		if(kupovni==0) throw new RuntimeException("Kupovni kurs ne sme biti 0.");
 		this.kupovni = kupovni;
 	}
 	public double getSrednji() {
 		return srednji;
 	}
 	public void setSrednji(double srednji) {
+		if(srednji==0) throw new RuntimeException("Srednji kurs ne sme biti 0.");
 		this.srednji = srednji;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if(datum.before(new GregorianCalendar())) throw new RuntimeException("Datum ne sme da se odnosi na proslost.");
 		this.datum = datum;
 	}
 	public Valuta getValuta() {
 		return valuta;
 	}
 	public void setValuta(Valuta valuta) {
+		if(valuta==null) throw new RuntimeException("Morate uneti valutu.");
 		this.valuta = valuta;
 	}
 	@Override
