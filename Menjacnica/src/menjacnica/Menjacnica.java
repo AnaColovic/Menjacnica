@@ -12,13 +12,13 @@ public class Menjacnica implements InterfejsMenjacnica{
 	public void dodajKurs(Kurs k) {
 		if(k==null) {
 			throw new RuntimeException("Morate uneti kurs da biste ga dodali u kursnu listu");
-		} else {
-			kursnaLista.add(k);
-		}
+		} 
+		if(kursnaLista.contains(k)==false) kursnaLista.add(k);
 	}
 
 	@Override
 	public void obrisiKurs(Kurs k) {
+		if(kursnaLista.contains(k))
 		kursnaLista.remove(k);
 	}
 
