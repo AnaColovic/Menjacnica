@@ -19,10 +19,16 @@ public class Menjacnica implements InterfejsMenjacnica{
 
 	@Override
 	public void obrisiKurs(Kurs k) {
+		kursnaLista.remove(k);
 	}
 
 	@Override
 	public Kurs vratiKurs(Valuta v, GregorianCalendar datum) {
+		for(int i=0;i<kursnaLista.size();i++){
+			if(kursnaLista.get(i).getValuta().equals(v) && kursnaLista.get(i).getDatum().equals(datum)){
+				return kursnaLista.get(i);
+			}
+		}
 		return null;
 	}
 
